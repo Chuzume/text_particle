@@ -9,6 +9,7 @@
 リソースパックがないと話が始まらないので、サンプルのリソースパックを適用しておいてください。
 
 **text_particle:spawn**に引数を渡して実行することで、実行座標からパーティクルを発生させます。
+
 引数は使わないものも含め、全て指定する必要があります。
 
 ### 例
@@ -23,7 +24,7 @@ function text_particle:spawn {Font:sample32,Color:FF0000,Billboard:center,Scale:
 * **Scale**: パーティクルの大きさです。
 * **Frame**: パーティクルが存在する時間です。特別な理由がない限り、パーティクルのコマ数と同じ数値にすべきです。
 * **Brightness**: パーティクルの明るさです。**0~16**の範囲で指定します。未設定にしたい場合は**-1**など、範囲外の数値を指定しましょう。
-* **Rotation**: パーティクルの角度です。display系エンティティのleft_rotationと同じ指定方法です。
+* **Rotation**: パーティクルの角度です。display系エンティティのleft_rotationと同じ指定方法です。傾けたりしないのであれば、**[0f,0f,0f,1f]** を指定しておきましょう。
 
 ### サンプルについて
 データパック内の**text_particle:example/**内に、サンプルのfunctionが入っているので参考にどうぞ
@@ -71,11 +72,11 @@ function text_particle:spawn {Font:sample32,Color:FF0000,Billboard:center,Scale:
 }
 ```
 
-**8x8**から**128x128**についてはサンプルのリソースパック内にascentを調整済みのサンプルを用意しているので、
+**8x8**から**128x128**についてはサンプルのリソースパック内にascentを調整済みのサンプルを用意しているので、参考や追加のベースにしてください。
 
 ### 指定する画像について
 パーティクルとして使う画像は、各コマの不透明部分の左端が、各グリッドの左端に接するようにしてください。
 
-サンプルのリソースパック内の**asset/minecraft/textures/font/particle**内のSample8,Sample16,Sample32などを参考にしてください。
+サンプルのリソースパック内の**asset/minecraft/textures/font/particle**内のSample8,Sample16,Sample32を参考にしてください。
 
 
