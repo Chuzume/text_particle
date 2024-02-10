@@ -26,4 +26,56 @@ function text_particle:spawn {Font:sample32,Color:FF0000,Billboard:center,Scale:
 ### サンプルについて
 データパック内の**text_particle:example/**内に、サンプルのfunctionが入っているので参考にどうぞ
 
-## リソースパックにパーティクルを追加する
+## リソースパックにパーティクル用のフォントを追加する
+
+### jsonの書き方
+リソースパック内の**asset/minecraft/font/particle**内にパーティクル用のフォントを作ることでパーティクルを追加します。
+
+指定する文字は **/uE001** からスタートし、パーティクルのコマ数ごとに **/uE002** , **/uE003** … **/uE099** といったように、数字を増やしていってください。
+
+以下は1コマ32x32の、5個のコマを横に配置した画像を指定した例になります。
+
+```
+{
+    "providers": [
+            {
+            "type": "bitmap",
+            "file": "minecraft:font/particle/sample32.png",
+            "height": 32,
+            "ascent": 13,
+            "chars": [
+                "\uE001\uE002\uE003\uE004\uE005"
+            ]
+        }
+    ]
+}
+```
+
+パーティクルのコマ数が多く、途中で下に折り返したい場合などは以下のように記述してください。
+```
+{
+    "providers": [
+            {
+            "type": "bitmap",
+            "file": "minecraft:font/particle/sample32.png",
+            "height": 32,
+            "ascent": 13,
+            "chars": [
+                "\uE001\uE002\uE003\uE004\uE005"
+                "\uE006\uE007\uE008\uE009\uE0010"
+            ]
+        }
+    ]
+}
+```
+
+### 指定する画像について
+パーティクルとして使う画像は、各コマの不透明部分の左端が、グリッドの左端に接するようにしてください。
+
+以下の画像は1コマ32x32の画像を例としたものです。
+
+これを
+<img src="***https://github.com/Chuzume/text_particle/assets/46894504/91022a23-1ba2-41bb-80ba-4a1357decd87***" width="***32***">
+
+
+
