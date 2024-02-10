@@ -1,0 +1,13 @@
+{
+    "providers": [
+            {
+            "type": "bitmap",
+            "file": "minecraft:font/particle/sample8.png",
+            "height": 8,
+            "ascent": 1,
+            "chars": [
+                "\uE001\uE002\uE003\uE004"
+            ]
+        }
+    ]
+}

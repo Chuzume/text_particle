@@ -1,0 +1,13 @@
+{
+    "providers": [
+            {
+            "type": "bitmap",
+            "file": "minecraft:font/particle/sample64.png",
+            "height": 64,
+            "ascent": 29,
+            "chars": [
+                "\uE001"
+            ]
+        }
+    ]
+}
